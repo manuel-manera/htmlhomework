@@ -1,4 +1,3 @@
-# htmlhomework
-Here are my HTML exercises, even if they are very boring...
+# Esercizi HTML
 
-The exercises are available to everyone
+Raccolta degli esercizi HTML. Apri `index.html` per consultare la pagina principale.

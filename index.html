@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Raccolta degli esercizi HTML realizzati per l'I.I.S. Galileo Galilei di Crema.">
+    <title>Esercizi HTML | Manuel Manera</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --blue: #0566c8;
+            --blue-dark: #0755a5;
+            --text: #172536;
+            --muted: #657386;
+            --line: #e4eaf1;
+            --surface: #ffffff;
+            --background: #f4f7fb;
+        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            background: var(--background);
+            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .topbar {
+            min-height: 42px;
+            padding: 0 5.5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            background: #0755a5;
+            color: white;
+            font-size: 13px;
+        }
+        .topbar span:last-child { opacity: .9; }
+        .masthead {
+            padding: 25px 5.5%;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            background: var(--blue);
+            color: white;
+        }
+        .mark {
+            width: 62px;
+            height: 62px;
+            display: grid;
+            place-items: center;
+            flex: 0 0 auto;
+            border: 2px solid rgba(255,255,255,.9);
+            border-radius: 50%;
+            font-size: 34px;
+            font-weight: 700;
+        }
+        .school-name { margin: 0 0 5px; font-size: clamp(22px, 3vw, 30px); }
+        .school-address { margin: 0; font-size: 14px; opacity: .95; }
+        nav {
+            min-height: 58px;
+            padding: 0 5.5%;
+            display: flex;
+            align-items: center;
+            gap: 34px;
+            background: var(--blue);
+            border-top: 1px solid rgba(255,255,255,.2);
+            color: white;
+        }
+        nav a { color: white; text-decoration: none; font-weight: 600; }
+        nav a:hover { text-decoration: underline; }
+        main { width: min(1320px, 89%); margin: 38px auto 64px; }
+        .intro { margin-bottom: 28px; }
+        .eyebrow {
+            margin: 0 0 9px;
+            color: var(--blue);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+        h1 { margin: 0 0 9px; font-size: clamp(27px, 4vw, 36px); }
+        .intro p:last-child { margin: 0; color: var(--muted); line-height: 1.6; }
+        .section-heading {
+            margin: 32px 0 18px;
+            font-size: 23px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+        .card {
+            min-height: 188px;
+            padding: 23px;
+            display: flex;
+            flex-direction: column;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-top: 4px solid var(--blue);
+            box-shadow: 0 5px 20px rgba(25,55,90,.06);
+        }
+        .number { margin: 0 0 13px; color: var(--blue); font-size: 12px; font-weight: 700; }
+        .card h3 { margin: 0 0 9px; font-size: 19px; line-height: 1.3; }
+        .card p { margin: 0 0 20px; color: var(--muted); font-size: 14px; line-height: 1.5; }
+        .actions { margin-top: auto; display: flex; flex-wrap: wrap; gap: 10px; }
+        .button {
+            min-height: 42px;
+            padding: 10px 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--blue);
+            border-radius: 3px;
+            color: var(--blue);
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background .15s, color .15s;
+        }
+        .button.primary { background: var(--blue); color: white; }
+        .button:hover { background: var(--blue-dark); border-color: var(--blue-dark); color: white; }
+        footer {
+            padding: 22px 5.5%;
+            background: #064f98;
+            color: white;
+            text-align: center;
+            font-size: 13px;
+        }
+        @media (max-width: 900px) {
+            .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @media (max-width: 600px) {
+            .topbar { padding: 0 5%; font-size: 11px; }
+            .masthead { padding: 20px 5%; }
+            .mark { width: 48px; height: 48px; font-size: 27px; }
+            .school-address { font-size: 12px; }
+            nav { min-height: 50px; padding: 0 5%; gap: 23px; font-size: 14px; }
+            main { width: 90%; margin-top: 28px; }
+            .grid { grid-template-columns: 1fr; gap: 15px; }
+            .card { min-height: 0; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="topbar">
+            <span>G.galilei crema</span>
+            <span>Manuel Manera</span>
+        </div>
+        <div class="masthead">
+            <div class="mark" aria-hidden="true">M</div>
+            <div>
+                <p class="school-name"><strong>Manuel Manera</strong></p>
+                <p class="school-address">Studente presso IIS Galileicrema</p>
+            </div>
+        </div>
+        <nav aria-label="Navigazione principale">
+            <a href="#home">Home</a>
+            <a href="#esercizi">Esercizi</a>
+        </nav>
+    </header>
+    <main id="home">
+        <section class="intro">
+            <p class="eyebrow">Informatica · HTML</p>
+            <h1>Raccolta esercizi</h1>
+            <p>Elaborati HTML realizzati durante il percorso scolastico. Seleziona un esercizio per aprirlo oppure consulta la consegna quando disponibile.</p>
+        </section>
+        <section id="esercizi" aria-labelledby="exercise-heading">
+            <h2 class="section-heading" id="exercise-heading">Esercizi</h2>
+            <div class="grid">
+                <article class="card">
+                    <p class="number">ESERCIZIO 01</p>
+                    <h3>Ray Of Solar</h3>
+                    <p>Pagina dedicata al singolo degli Swedish House Mafia.</p>
+                    <div class="actions"><a class="button primary" href="Esercizi/01-ray-of-solar/index.html">Apri esercizio</a><a class="button" href="Esercizi/01-ray-of-solar/consegna.pdf">Consegna</a></div>
+                </article>
+                <article class="card">
+                    <p class="number">ESERCIZIO 02</p>
+                    <h3>Eric Prydz</h3>
+                    <p>Biografia, discografia e tabelle dedicate al DJ.</p>
+                    <div class="actions"><a class="button primary" href="Esercizi/02-eric-prydz/index.html">Apri esercizio</a><a class="button" href="Esercizi/02-eric-prydz/consegna.pdf">Consegna</a></div>
+                </article>
+                <article class="card">
+                    <p class="number">ESERCIZIO 03</p>
+                    <h3>Eiffel 65</h3>
+                    <p>Presentazione del gruppo musicale italiano.</p>
+                    <div class="actions"><a class="button primary" href="Esercizi/03-eiffel-65/index.html">Apri esercizio</a><a class="button" href="Esercizi/03-eiffel-65/consegna.pdf">Consegna</a></div>
+                </article>
+                <article class="card">
+                    <p class="number">ESERCIZIO 04</p>
+                    <h3>Orario scolastico</h3>
+                    <p>Tabella dell'orario settimanale della classe.</p>
+                    <div class="actions"><a class="button primary" href="Esercizi/04-orario-scolastico/index.html">Apri esercizio</a><a class="button" href="Esercizi/04-orario-scolastico/consegna.pdf">Consegna</a></div>
+                </article>
+                <article class="card">
+                    <p class="number">ESERCIZIO 05</p>
+                    <h3>L'Istituto Galilei</h3>
+                    <p>Presentazione degli indirizzi e degli spazi dell'istituto.</p>
+                    <div class="actions"><a class="button primary" href="Esercizi/05-istituto-galilei/index.html">Apri esercizio</a><a class="button" href="Esercizi/05-istituto-galilei/consegna.pdf">Consegna</a></div>
+                </article>
+                <article class="card">
+                    <p class="number">ESERCIZIO 06</p>
+                    <h3>Ristorante Da Miro</h3>
+                    <p>Pagina informativa con contatti, mappa e piatti.</p>
+                    <div class="actions"><a class="button primary" href="Esercizi/06-ristorante-da-miro/index.html">Apri esercizio</a><a class="button" href="Esercizi/06-ristorante-da-miro/consegna.pdf">Consegna</a></div>
+                </article>
+                <article class="card">
+                    <p class="number">ESERCIZIO 07</p>
+                    <h3>Ristorante Marechiaro</h3>
+                    <p>Pagina dedicata alle informazioni e al menu del ristorante.</p>
+                    <div class="actions"><a class="button primary" href="Esercizi/07-ristorante-marechiaro/index.html">Apri esercizio</a></div>
+                </article>
+                <article class="card">
+                    <p class="number">ESERCIZIO 08</p>
+                    <h3>Swedish House Mafia</h3>
+                    <p>Presentazione del trio e della sua storia musicale.</p>
+                    <div class="actions"><a class="button primary" href="Esercizi/08-swedish-house-mafia/index.html">Apri esercizio</a></div>
+                </article>
+                <article class="card">
+                    <p class="number">ESERCIZIO 09</p>
+                    <h3>In And Out Of Love</h3>
+                    <p>Pagina dedicata alla versione del brano pubblicata nel 2024.</p>
+                    <div class="actions"><a class="button primary" href="Esercizi/09-in-and-out-of-love/index.html">Apri esercizio</a><a class="button" href="Esercizi/09-in-and-out-of-love/consegna.pdf">Consegna</a></div>
+                </article>
+                <article class="card">
+                    <p class="number">ESERCIZIO 10</p>
+                    <h3>Tabella AMD Radeon RX 6000</h3>
+                    <p>Tabella comparativa delle schede grafiche della serie RX 6000.</p>
+                    <div class="actions"><a class="button primary" href="Esercizi/10-tabella-amd/index.html">Apri esercizio</a><a class="button" href="Esercizi/10-tabella-amd/consegna.pdf">Consegna</a></div>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer>I.I.S. Galileo Galilei · Raccolta esercizi HTML</footer>
+</body>
+</html>
